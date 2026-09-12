@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #FAF6F0;
+    color: #2B2B2B;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Hairline luxury divider */
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(198, 161, 91, 0) 0%, rgba(198, 161, 91, 0.65) 50%, rgba(198, 161, 91, 0) 100%);
+  }
+
+  .divider-gold-solid {
+    height: 1px;
+    background-color: #C6A15B;
+    opacity: 0.35;
+  }
+
+  /* Eyebrow Label */
+  .eyebrow-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Luxury Glassmorphism & Cards */
+  .glass-card {
+    background: rgba(250, 246, 240, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(198, 161, 91, 0.2);
+  }
+
+  .glass-nav {
+    background: rgba(250, 246, 240, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(18, 52, 71, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(198, 161, 91, 0.25);
+  }
+
+  /* Custom Luxury Button Styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-none font-medium text-sm tracking-wider uppercase transition-all duration-300;
+    background-color: #1B4B66;
+    color: #FAF6F0;
+    border: 1px solid #1B4B66;
+  }
+  .btn-primary:hover {
+    background-color: #123447;
+    border-color: #C6A15B;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px -8px rgba(27, 75, 102, 0.4);
+  }
+
+  .btn-saffron {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-none font-medium text-sm tracking-wider uppercase transition-all duration-300;
+    background-color: #D98E3A;
+    color: #FFFFFF;
+    border: 1px solid #D98E3A;
+  }
+  .btn-saffron:hover {
+    background-color: #B87228;
+    border-color: #FAF6F0;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px -8px rgba(217, 142, 58, 0.45);
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-none font-medium text-sm tracking-wider uppercase transition-all duration-300;
+    background-color: transparent;
+    color: #FAF6F0;
+    border: 1px solid rgba(198, 161, 91, 0.6);
+  }
+  .btn-outline-gold:hover {
+    background-color: rgba(198, 161, 91, 0.15);
+    border-color: #C6A15B;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+  }
+}
+
+/* Ken Burns Subtle Animation */
+@keyframes kenburns-slow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenburns-slow 22s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D98E3A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B87228;
+}
